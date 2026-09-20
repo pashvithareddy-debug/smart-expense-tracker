@@ -1,0 +1,24 @@
+# ==========================================
+# Frontend Dockerfile - Smart Expense Tracker
+# ==========================================
+
+# Stage 1: Build production assets
+FROM node:20-alpine AS build-stage
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci
+
+COPY . .
+RUN npm run build
+
+# Stage 2: Serve with Nginx Alpine
+FROM nginx:alpine
+
+COPY --from=build-stage /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
