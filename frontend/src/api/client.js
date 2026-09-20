@@ -1,6 +1,8 @@
 // API Client for Smart Expense Tracker
 
-const BASE_URL = import.meta.env.VITE_API_URL || '';
+const BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  'https://smart-expense-tracker-production-ee71.up.railway.app';
 
 export const getToken = () => localStorage.getItem('smart_expense_token');
 export const setToken = (token) => localStorage.setItem('smart_expense_token', token);
