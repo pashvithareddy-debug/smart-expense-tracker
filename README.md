@@ -150,7 +150,7 @@ Run the entire application (PostgreSQL + FastAPI + React) in one command:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/smart-expense-tracker.git
+git clone https://github.com/pashvithareddy-debug/smart-expense-tracker.git
 cd smart-expense-tracker
 
 # 2. Copy environment template
@@ -202,6 +202,14 @@ npm run dev
 ```
 
 Open `http://localhost:5173` in your browser!
+
+---
+
+## 🌐 Live Demo
+
+Anyone can test the deployed application directly in a browser — no installation required.
+
+👉 **[Open Smart Expense Tracker](https://striking-flexibility-production-5bc2.up.railway.app)**
 
 ---
 
