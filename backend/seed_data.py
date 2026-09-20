@@ -28,7 +28,10 @@ def seed():
             db.refresh(user)
             print(f"Created demo user: {user.email}")
         else:
-            print(f"Using existing user: {user.email}")
+            user.hashed_password = hash_password("password123")
+            db.commit()
+            db.refresh(user)
+            print(f"Using existing user and reset demo password: {user.email}")
 
         # Check existing transactions
         tx_count = db.query(Transaction).filter(Transaction.user_id == user.id).count()
